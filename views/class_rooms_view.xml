@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="class_room_view_form" model="ir.ui.view">
+            <field name="name">Class room view form</field>
+            <field name="model">class.room</field>
+            <field name="arch" type="xml">
+                <form string="class_room_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="capacity"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="class_room_view_tree" model="ir.ui.view">
+            <field name="name">Class room view tree</field>
+            <field name="model">class.room</field>
+            <field name="arch" type="xml">
+                <tree string="class_room_tree">
+                    <field name="name"/>
+                    <field name="capacity"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="class_room_view_action" model="ir.actions.act_window">
+            <field name="name">Setup class room</field>
+            <field name="res_model">class.room</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="class_room_menu"
+                  name="Class room"
+                  parent="website_slides.website_slides_menu_configuration"
+                  action="class_room_view_action"
+                  sequence="7"/>
+
+
+    </data>
+</odoo>
